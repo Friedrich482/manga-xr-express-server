@@ -1,5 +1,5 @@
 import puppeteer from "puppeteer";
-import getSeasonFromTitle from "./getSeasonFromTitle.js";
+import getSeasonFromTitle from "./getSeasonFromTitle";
 
 let id = "";
 export const fetchChapterPages = async (
