@@ -1,5 +1,5 @@
 import express from "express";
-import { fetchChapterPages } from "../dist/utils/fetchChapterPages";
+import { fetchChapterPages } from "./utils/fetchChapterPages";
 const app = express();
 const PORT = 5000;
 app.get("/", async (req, res) => {
