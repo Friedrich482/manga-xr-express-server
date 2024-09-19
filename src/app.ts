@@ -1,10 +1,12 @@
 import express from "express";
+import { fetchChapterPages } from "./utils/fetchChapterPages";
 const app = express();
 const PORT = 5000;
 
-app.get("/", (req, res) => {
+app.get("/", async (req, res) => {
   res.status(200);
-  res.send({ puppet: "Puppeteer my ass" });
+  const images = await fetchChapterPages("chapter-1", "Mato-Seihei-No-Slave");
+  res.send({ puppet: "Puppeteer god e", images });
 });
 
 app
