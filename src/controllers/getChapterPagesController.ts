@@ -6,14 +6,17 @@ const getChapterPagesController = async (req: Request, res: Response) => {
     chapterSlug: string;
     mangaSlug: string;
   };
-
+  if (!mangaSlug) {
+    res.status(400);
+    res.send({ error: "Invalid manga" });
+  }
   if (!isValidChapterFormat(chapterSlug)) {
     res.status(400);
     res.send({ error: "Invalid chapter" });
     return;
   }
-  res.status(200);
   const images = await fetchChapterPages(chapterSlug, mangaSlug);
+  res.status(200);
   res.send({
     images,
   });

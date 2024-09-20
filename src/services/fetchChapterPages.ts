@@ -1,5 +1,6 @@
 import puppeteer from "puppeteer";
 import getSeasonFromTitle from "../utils/getSeasonFromTitle";
+import { MAIN_URL } from "@/lib/constants";
 let id = "";
 export const fetchChapterPages = async (
   chapter: string,
@@ -26,12 +27,10 @@ export const fetchChapterPages = async (
     page.setDefaultNavigationTimeout(2 * 60 * 1000);
     if (season && Number(season) > 1) {
       await page.goto(
-        `${"https://mangasee123.com"}/read-online/${title}-${chapter}-index-${season}.html`
+        `${MAIN_URL}/read-online/${title}-${chapter}-index-${season}.html`
       );
     } else {
-      await page.goto(
-        `${"https://mangasee123.com"}/read-online/${title}-${chapter}.html`
-      );
+      await page.goto(`${MAIN_URL}/read-online/${title}-${chapter}.html`);
     }
     const dataElements = await page.$$(
       "div.MainContainer > div.ImageGallery > div.ng-scope > div.ng-scope"
