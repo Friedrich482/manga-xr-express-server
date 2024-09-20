@@ -14,3 +14,11 @@ export type PartialMangaUnitDataType = {
   latestUpdateDate: string;
   synopsis: string;
 };
+type MainElementMangaType = {
+  title: string;
+  image: string;
+  mangaSlug: string;
+  lastChapter: string;
+};
+export type fetchMangaBasicType = MainElementMangaType;
+export type LatestUpdateType = MainElementMangaType;
