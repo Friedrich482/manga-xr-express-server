@@ -1,6 +1,6 @@
 import { MAIN_URL } from "@/lib/constants";
 import cleanUpChaptersArray from "@/utils/cleanUpChaptersArray";
-import cleanUpPartialMangaUnitInfo from "@/utils/cleanUpunitMangaInfo";
+import cleanUpPartialMangaUnitInfo from "@/utils/cleanUpUnitMangaInfo";
 import getSeasonFromTitle from "@/utils/getSeasonFromTitle";
 import puppeteer from "puppeteer";
 
