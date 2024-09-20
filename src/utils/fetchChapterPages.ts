@@ -1,6 +1,5 @@
 import puppeteer from "puppeteer";
 import getSeasonFromTitle from "./getSeasonFromTitle";
-
 let id = "";
 export const fetchChapterPages = async (
   chapter: string,
@@ -10,7 +9,18 @@ export const fetchChapterPages = async (
   let browser;
   const { title, season } = getSeasonFromTitle(mangaTitle);
   try {
-    browser = await puppeteer.launch();
+    browser = await puppeteer.launch({
+      args: [
+        "--no-sandbox",
+        "--disable-setuid-sandbox",
+        "--single-process",
+        "--no-zygote",
+      ],
+      executablePath:
+        process.env.NODE_ENV === "production"
+          ? process.env.PUPPETEER_EXECUTABLE_PATH
+          : puppeteer.executablePath(),
+    });
     const page = await browser.newPage();
 
     await page.setViewport({

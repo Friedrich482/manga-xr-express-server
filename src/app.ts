@@ -6,7 +6,7 @@ const PORT = 5000;
 app.get("/", async (req, res) => {
   res.status(200);
   const images = await fetchChapterPages("chapter-1", "Mato-Seihei-No-Slave");
-  res.send({ puppet: "Puppeteer god e", images });
+  res.send({ puppet: "Puppeteer god, you suck", images });
 });
 
 app
