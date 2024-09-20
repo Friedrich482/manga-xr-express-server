@@ -5,8 +5,8 @@
   "main": "./src/app.js",
   "scripts": {
     "dev": "nodemon",
-    "start": "npx @puppeteer/browsers install chrome@stable && node app.js",
-    "build": "npm install && tsc",
+    "start": "node app.js",
+    "build": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "type": "module",
