@@ -1,9 +1,11 @@
 import express from "express";
 import chapterPages from "./routes/chapterPages";
+import home from "./routes/home";
 const app = express();
 const PORT = 5000;
 
 app.use("/", chapterPages);
+app.use("/", home);
 
 app
   .listen(PORT, () => {
