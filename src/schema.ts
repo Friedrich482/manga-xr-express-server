@@ -36,3 +36,11 @@ export type PartialMangaListType = {
 };
 
 export type MangaListType = fetchMangaBasicType;
+
+export type PartialSearchMangaResultType = {
+  title: string;
+  image: string;
+  mangaSlug: string;
+};
+
+export type SearchResultMangaType = MainElementMangaType;

@@ -5,6 +5,7 @@ import latestUpdates from "./routes/latestUpdates";
 import popularManga from "./routes/popularManga";
 import home from "./routes/home";
 import list from "./routes/list";
+import search from "./routes/search";
 const app = express();
 const PORT = 5000;
 
@@ -14,7 +15,7 @@ app.use("/", unitMangaInfo);
 app.use("/", latestUpdates);
 app.use("/", popularManga);
 app.use("/", list);
-
+app.use("/", search);
 app
   .listen(PORT, () => {
     console.log(
