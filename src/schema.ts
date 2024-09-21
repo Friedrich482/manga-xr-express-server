@@ -27,4 +27,12 @@ export type fetchMangaBasicType = MainElementMangaType;
 export type LatestUpdateType = MainElementMangaType;
 
 export type PartialPopularMangaType = MainElementMangaType;
+
 export type PopularMangaType = PartialPopularMangaType & { genres: string };
+
+export type PartialMangaListType = {
+  title: string;
+  mangaSlug: string;
+};
+
+export type MangaListType = fetchMangaBasicType;
