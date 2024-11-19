@@ -1,1 +1,1 @@
-Repo for manga-xr express API   
+Repository for the manga-xr express API   
